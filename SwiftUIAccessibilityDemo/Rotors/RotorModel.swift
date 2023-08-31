@@ -22,9 +22,9 @@ struct RotorModel {
     var values: [Value] = [
         Value(label: "one", color: .green),
         Value(label: "two", color: .blue),
-        Value(label: "three", color: .red, isRotorEntry: true),
+        Value(label: "Work Email", color: .green, isRotorEntry: true),
         Value(label: "four", color: .purple),
-        Value(label: "five", color: .orange, isRotorEntry: true),
+        Value(label: "Debit Card Fraud", color: .red, isRotorEntry: true),
         Value(label: "six", color: .yellow),
         Value(label: "seven", color: .brown)
     ]
