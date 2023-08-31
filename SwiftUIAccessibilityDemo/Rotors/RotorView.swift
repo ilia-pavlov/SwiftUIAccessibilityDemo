@@ -17,18 +17,12 @@ struct RotorView: View {
     var model = RotorModel()
 
     var body: some View {
-        Text("Accessibility Rotors")
-            .font(.title)
-            .bold()
-        Spacer()
-        
         LazyVStack {
             ForEach(model.values) { value in
                 ElementView(color: value.color,
                                          text: Text(value.label))
             }
         }
-        Spacer()
         .accessibilityRotor("Special Values",
                             entries: model.values.filter(\.isRotorEntry),
                             entryLabel: \.label)
