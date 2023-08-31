@@ -1,5 +1,5 @@
 //
-//  Canvas.swift
+//  GrossGraphView.swift
 //  SwiftUIAccessibilityDemo
 //
 //  Created by Ilia Pavlov on 8/28/23.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Examples of using a canvas view in an accessible way.
-struct CanvasExample: View {
+struct GrossGraphView: View {
     var body: some View {
         LinesOfCodeGraph(lines: [30, 12, 2, 34, 50])
     }
@@ -20,10 +20,10 @@ private struct LinesOfCodeGraph: View {
 
     var body: some View {
         ZStack(alignment: .topLeading) {
-            Text("Lines of Code")
+            Text("Percentages of gross")
                 .foregroundColor(Color.white)
                 .font(.title)
-                .accessibilityAddTraits(.isHeader)
+//                .accessibilityAddTraits(.isHeader)
 
             // `Canvas` isn't accessible by default, and isn't visible to
             // VoiceOver.
@@ -32,6 +32,7 @@ private struct LinesOfCodeGraph: View {
                 let insetSize = CGSize(width: size.width, height: size.height - inset * 2)
                 let width = insetSize.width / CGFloat(lines.count)
                 let max = lines.max() ?? 0
+                
                 for index in lines.indices {
                     let xInset = width * CGFloat(index)
                     let height = (CGFloat(lines[index]) / CGFloat(max)) * insetSize.height
@@ -44,9 +45,10 @@ private struct LinesOfCodeGraph: View {
                             height: height),
                         cornerRadius: 4)
                     context.fill(path, with: .color(Color.blue))
-
+            
+                    // MARK: - Exact UI
                     context.draw(
-                        Text("\(lines[index]) lines")
+                        Text("\(lines[index]) %")
                             .foregroundColor(Color.white)
                             .font(.caption2),
                         at: CGPoint(
@@ -77,7 +79,7 @@ private struct LinesOfCodeGraph: View {
                     ForEach(lines.indices, id: \.self) { index in
                         Rectangle()
                             .accessibilityLabel("Week \(index + 1)")
-                            .accessibilityValue("\(lines[index]) lines")
+                            .accessibilityValue("\(lines[index]) %")
                     }
                 }
             }
@@ -93,7 +95,7 @@ private struct LinesOfCodeGraph: View {
 
 struct CanvasExample_Previews: PreviewProvider {
     static var previews: some View {
-        CanvasExample()
+        GrossGraphView()
     }
 }
 

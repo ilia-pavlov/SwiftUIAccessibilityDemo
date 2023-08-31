@@ -9,7 +9,7 @@ import SwiftUI
 
 /// Examples of using dynamically-generated stacks and lists
 /// in an accessible way.
-struct Cards: View {
+struct ActivityCardsView: View {
     @State private var activities: [Activity] = [
         Activity(
             id: 0,
@@ -35,7 +35,7 @@ struct Cards: View {
         VStack {
             HStack {
                 ForEach(activities) { activity in
-                    ActivityCell(activity: activity)
+                    ActivityCardView(activity: activity)
                 }
             }
         }
@@ -49,34 +49,37 @@ struct Cards: View {
         var content: String
     }
 
-    public struct ActivityCell: View {
+    public struct ActivityCardView: View {
         var activity: Activity
         
         var body: some View {
             VStack(alignment: .leading) {
-                HStack {
-                    Image(systemName: "person")
-                    VStack(alignment: .leading) {
-                        Text(activity.username)
-                            .font(.subheadline)
-                            .accessibilityHidden(true)
-                        Text(activity.caption)
-                            .font(.caption)
-                            .accessibilitySortPriority(1)
+                VStack {
+                    HStack {
+                        Image(systemName: "person")
+                        VStack(alignment: .leading) {
+                            Text(activity.username)
+                                .font(.subheadline)
+                                .accessibilityHidden(true)
+                            Text(activity.caption)
+                                .font(.caption)
+    //                            .accessibilitySortPriority(1)
+                        }
+                        
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.5)
                     }
-                    
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.2)
+                    Divider()
+                    Text(activity.content)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.5)
                 }
-
-                Divider()
-
-                Text(activity.content)
-
+                .accessibilityElement(children: .combine)
+                
                 HStack {
                     let buttonBackground = Circle().foregroundColor(Color.blue)
                     let padding: CGFloat = 4
-
+                    
                     Button {} label: {
                         Image(systemName: "hand.thumbsup")
                     }
@@ -84,6 +87,8 @@ struct Cards: View {
                     .padding(padding)
                     .background { buttonBackground }
 
+                    Spacer()
+                    
                     Button {} label: {
                         Image(systemName: "bubble.left")
                     }
@@ -92,19 +97,22 @@ struct Cards: View {
                     .background { buttonBackground }
                 }
                 .symbolVariant(.fill)
+                .padding(.top)
             }
             .foregroundColor(Color.white)
-            .frame(width: 60)
+            .frame(width: 100)
             .padding()
             .background {
                 RoundedRectangle(cornerRadius: 8)
                     .foregroundColor(Color(white: 0.2))
+                    .frame(width: 135, height: 150)
             }
             // The combine value merges accessibility properties, turning
             // Buttons into custom actions. Note that some labels
             // and traits are ignored. For example, the label
             // from the `Image` and its traits are ignored since
             // other elements provide a label.
+            
 //            .accessibilityElement(children: .combine)
             .accessibilityElement(children: .contain)
         }
@@ -113,7 +121,7 @@ struct Cards: View {
 
 struct ForEachExample_Previews: PreviewProvider {
     static var previews: some View {
-        Cards()
+        ActivityCardsView()
     }
 }
 
