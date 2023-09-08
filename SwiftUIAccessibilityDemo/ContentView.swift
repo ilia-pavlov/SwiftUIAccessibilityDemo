@@ -18,6 +18,7 @@ struct ContentView: View {
                 /// .accessibilityElement(children: .combine)
                 /// .accessibilitySortPriority(1)
                 /// .accessibilityHidden(true)
+                /// More info about label, value
                 ActivityCardsView()
                 // MARK: - Common Issues
                 /// .accessibilityChildren
@@ -28,10 +29,14 @@ struct ContentView: View {
                 Button("Delete") {}
                     .buttonStyle(SymbolButtonStyle(systemName: "trash"))
                     .frame(width: 64, height: 64)
+                    .accessibilityValue("Needs for remove items")
+//                    .accessibilityLabel("Delete")
+                    .accessibilityHint("During Tap it will change color")
                 Spacer()
                 // MARK: - Accessibility Rotors
                 /// .accessibilityRotor
                 RotorExampleNavigation()
+                // TODO: More useful example with rotors
             }
                 .navigationTitle("Accessibility Demo")
             //                .accessibilityAddTraits(.isHeader)

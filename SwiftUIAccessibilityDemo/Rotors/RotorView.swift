@@ -20,7 +20,7 @@ struct RotorView: View {
         LazyVStack {
             ForEach(model.values) { value in
                 ElementView(color: value.color,
-                                         text: Text(value.label))
+                            text: Text(value.label))
             }
         }
         .accessibilityRotor("Special Values",

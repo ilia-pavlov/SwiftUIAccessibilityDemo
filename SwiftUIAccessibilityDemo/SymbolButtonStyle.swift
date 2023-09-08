@@ -12,12 +12,12 @@ import SwiftUI
 /// This style uses the label only for accessibility; the label is not rendered visually.
 struct SymbolButtonStyle: ButtonStyle {
     let systemName: String
-
+    
     func makeBody(configuration: Configuration) -> some View {
         ZStack {
             Circle()
                 .foregroundColor(configuration.isPressed ? Color.red : Color.blue)
-
+            
             Image(systemName: systemName)
                 .resizable()
                 .scaledToFit()
@@ -30,7 +30,11 @@ struct SymbolButtonStyle: ButtonStyle {
         // of this `Button` would come only from the `Image`, and the `label` passed
         // into the `Button` when it is constructed would be lost, because it isn't
         // rendered visually for this style.
-        .accessibilityRepresentation { configuration.label }
+//        .accessibilityRepresentation { configuration.label }
+//        .accessibilityLabel(configuration.label)
+//        .accessibilityValue("")
+        //         TODO: diff between .accessibilityRepresentation  and
+        //So, the choice between .accessibilityRepresentation and .accessibilityChildren depends on whether you want to replace the entire accessibility representation or provide accessibility information for specific subviews within your custom view.
     }
 }
 
