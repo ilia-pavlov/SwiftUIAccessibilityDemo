@@ -25,16 +25,8 @@ struct SymbolButtonStyle: ButtonStyle {
                 .padding(8)
         }
         
-        // Use `accessibilityRepresentation` to replace accessibility with that of
-        // the configuration's label. Otherwise, the accessibility
-        // of this `Button` would come only from the `Image`, and the `label` passed
-        // into the `Button` when it is constructed would be lost, because it isn't
-        // rendered visually for this style.
-//        .accessibilityRepresentation { configuration.label }
+        .accessibilityRepresentation { configuration.label }
 //        .accessibilityLabel(configuration.label)
-//        .accessibilityValue("")
-        //         TODO: diff between .accessibilityRepresentation  and
-        //So, the choice between .accessibilityRepresentation and .accessibilityChildren depends on whether you want to replace the entire accessibility representation or provide accessibility information for specific subviews within your custom view.
     }
 }
 

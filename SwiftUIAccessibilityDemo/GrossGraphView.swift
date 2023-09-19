@@ -23,7 +23,7 @@ private struct LinesOfCodeGraph: View {
             Text("Percentages of gross")
                 .foregroundColor(Color.white)
                 .font(.title)
-//                .accessibilityAddTraits(.isHeader)
+                .accessibilityAddTraits(.isHeader)
 
             // `Canvas` isn't accessible by default, and isn't visible to
             // VoiceOver.
@@ -68,12 +68,6 @@ private struct LinesOfCodeGraph: View {
             // an accessibility element visible to VoiceOver.
             .accessibilityLabel("Lines of Code Bar Graph")
 
-            // Use `accessibilityChildren` to create accessibility elements
-            // within the canvas, so that VoiceOver users can navigate inside
-            // it and read the information for every week.
-            // These accessibility elements aren't drawn on the
-            // screen. Instead, they're just a representation of the
-            // canvas for users of assistive technologies.
             .accessibilityChildren {
                 HStack {
                     ForEach(lines.indices, id: \.self) { index in

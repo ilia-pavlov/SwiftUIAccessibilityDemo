@@ -14,32 +14,17 @@ struct ContentView: View {
         NavigationStack {
             VStack {
                 // MARK: - Accessibility Basic
-                /// .accessibilityElement(children: .contain)
-                /// .accessibilityElement(children: .combine)
-                /// .accessibilitySortPriority(1)
-                /// .accessibilityHidden(true)
-                /// More info about label, value
                 ActivityCardsView()
                 // MARK: - Common Issues
-                /// .accessibilityChildren
                 GrossGraphView()
                     .padding()
                 Spacer()
-                /// .accessibilityRepresentation
-                Button("Delete") {}
-                    .buttonStyle(SymbolButtonStyle(systemName: "trash"))
-                    .frame(width: 64, height: 64)
-                    .accessibilityValue("Needs for remove items")
-//                    .accessibilityLabel("Delete")
-                    .accessibilityHint("During Tap it will change color")
+                CustomButton(buttonLabel: "Delete", imageName: "trash")
                 Spacer()
                 // MARK: - Accessibility Rotors
-                /// .accessibilityRotor
                 RotorExampleNavigation()
-                // TODO: More useful example with rotors
             }
                 .navigationTitle("Accessibility Demo")
-            //                .accessibilityAddTraits(.isHeader)
         }
     }
 }

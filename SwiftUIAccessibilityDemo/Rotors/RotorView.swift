@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-/// A rotor example using a lazy vertical stack.
 ///
 /// Accessibility  elements are scrolled into place
 /// automatically when the user chooses the Rotor entry in VoiceOver.
@@ -17,13 +16,13 @@ struct RotorView: View {
     var model = RotorModel()
 
     var body: some View {
-        LazyVStack {
+        ScrollView {
             ForEach(model.values) { value in
                 ElementView(color: value.color,
                             text: Text(value.label))
             }
         }
-        .accessibilityRotor("Special Values",
+        .accessibilityRotor("Demo accessibility Rotor",
                             entries: model.values.filter(\.isRotorEntry),
                             entryLabel: \.label)
     }

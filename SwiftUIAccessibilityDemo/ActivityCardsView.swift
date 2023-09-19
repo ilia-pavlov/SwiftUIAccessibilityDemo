@@ -63,7 +63,7 @@ struct ActivityCardsView: View {
                                 .accessibilityHidden(true)
                             Text(activity.caption)
                                 .font(.caption)
-    //                            .accessibilitySortPriority(1)
+                                .accessibilitySortPriority(1)
                         }
                         
                         .lineLimit(1)
@@ -107,13 +107,7 @@ struct ActivityCardsView: View {
                     .foregroundColor(Color(white: 0.2))
                     .frame(width: 135, height: 150)
             }
-            // The combine value merges accessibility properties, turning
-            // Buttons into custom actions. Note that some labels
-            // and traits are ignored. For example, the label
-            // from the `Image` and its traits are ignored since
-            // other elements provide a label.
             
-//            .accessibilityElement(children: .combine)
             .accessibilityElement(children: .contain)
         }
     }

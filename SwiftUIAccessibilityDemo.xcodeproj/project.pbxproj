@@ -17,6 +17,7 @@
 		081FE9B12AA046AD00D3C187 /* RotorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081FE9B02AA046AD00D3C187 /* RotorModel.swift */; };
 		081FE9B32AA046D400D3C187 /* RotorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081FE9B22AA046D400D3C187 /* RotorView.swift */; };
 		081FE9B52AA0473200D3C187 /* ElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081FE9B42AA0473200D3C187 /* ElementView.swift */; };
+		084FC9562AB3A66600F9F767 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FC9552AB3A66600F9F767 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		081FE9B02AA046AD00D3C187 /* RotorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotorModel.swift; sourceTree = "<group>"; };
 		081FE9B22AA046D400D3C187 /* RotorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotorView.swift; sourceTree = "<group>"; };
 		081FE9B42AA0473200D3C187 /* ElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementView.swift; sourceTree = "<group>"; };
+		084FC9552AB3A66600F9F767 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,12 +65,12 @@
 		081FE9962A9D9DEE00D3C187 /* SwiftUIAccessibilityDemo */ = {
 			isa = PBXGroup;
 			children = (
+				084FC9572AB3A72B00F9F767 /* CustomButton */,
 				081FE9AF2AA0469D00D3C187 /* Rotors */,
 				081FE9972A9D9DEE00D3C187 /* SwiftUIAccessibilityDemoApp.swift */,
 				081FE9992A9D9DEE00D3C187 /* ContentView.swift */,
 				081FE9A52A9D9E0C00D3C187 /* ActivityCardsView.swift */,
 				081FE9A72A9D9EEB00D3C187 /* GrossGraphView.swift */,
-				081FE9AB2AA03D0000D3C187 /* SymbolButtonStyle.swift */,
 				081FE99B2A9D9DEF00D3C187 /* Assets.xcassets */,
 				081FE99D2A9D9DEF00D3C187 /* Preview Content */,
 			);
@@ -91,6 +93,15 @@
 				081FE9B42AA0473200D3C187 /* ElementView.swift */,
 			);
 			path = Rotors;
+			sourceTree = "<group>";
+		};
+		084FC9572AB3A72B00F9F767 /* CustomButton */ = {
+			isa = PBXGroup;
+			children = (
+				084FC9552AB3A66600F9F767 /* CustomButton.swift */,
+				081FE9AB2AA03D0000D3C187 /* SymbolButtonStyle.swift */,
+			);
+			path = CustomButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +176,7 @@
 			files = (
 				081FE9B12AA046AD00D3C187 /* RotorModel.swift in Sources */,
 				081FE9B32AA046D400D3C187 /* RotorView.swift in Sources */,
+				084FC9562AB3A66600F9F767 /* CustomButton.swift in Sources */,
 				081FE9A62A9D9E0C00D3C187 /* ActivityCardsView.swift in Sources */,
 				081FE9AC2AA03D0000D3C187 /* SymbolButtonStyle.swift in Sources */,
 				081FE99A2A9D9DEE00D3C187 /* ContentView.swift in Sources */,
