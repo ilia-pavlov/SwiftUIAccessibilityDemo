@@ -57,13 +57,14 @@ struct ActivityCardsView: View {
                 VStack {
                     HStack {
                         Image(systemName: "person")
+                            .accessibilitySortPriority(7)
                         VStack(alignment: .leading) {
                             Text(activity.username)
                                 .font(.subheadline)
-                                .accessibilityHidden(true)
+                                .accessibilitySortPriority(5)
                             Text(activity.caption)
                                 .font(.caption)
-                                .accessibilitySortPriority(1)
+                                .accessibilitySortPriority(6)
                         }
                         
                         .lineLimit(1)
@@ -74,7 +75,7 @@ struct ActivityCardsView: View {
                         .lineLimit(1)
                         .minimumScaleFactor(0.5)
                 }
-                .accessibilityElement(children: .combine)
+//                .accessibilityElement(children: .combine)
                 
                 HStack {
                     let buttonBackground = Circle().foregroundColor(Color.blue)
@@ -109,6 +110,7 @@ struct ActivityCardsView: View {
             }
             
             .accessibilityElement(children: .contain)
+//            .accessibilityElement(children: .combine)
         }
     }
 }

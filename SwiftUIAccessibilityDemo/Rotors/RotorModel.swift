@@ -29,6 +29,6 @@ struct RotorModel {
         Value(label: "seven", color: .brown),
         Value(label: "one-one", color: .green),
         Value(label: "two-two", color: .blue),
-        Value(label: "Home Email", color: .green, isRotorEntry: true),
+        Value(label: "Home Email", color: .green, isRotorEntry: true)
     ]
 }

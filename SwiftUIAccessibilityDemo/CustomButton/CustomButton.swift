@@ -18,6 +18,6 @@ struct CustomButton: View {
             .frame(width: 64, height: 64)
 //            .accessibilityLabel("Delete")
             .accessibilityValue("Needs for remove items")
-            .accessibilityHint("During Tap it will change color")
+            .accessibilityHint("Item was replaced")
     }
 }
